@@ -1,0 +1,14 @@
+{
+  "name": "sussex-eth-mqtt",
+  "type": "ionic1",
+  "integrations": {
+    "cordova": {}
+  },
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*",
+    "!www/**/*.map"
+  ],
+  "app_id": "64f64c66"
+}
