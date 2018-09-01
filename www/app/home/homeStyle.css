@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+.home-content{
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+}
+
+.wrap{
+    margin: auto;
+    text-align: center;
+    margin-top: 5%;
+}
+
+#notConnected{
+    display: none;
+    
+}
+
+.show-p {
+    display: block;
+}
+
+.device-view{
+  color: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    margin: 5px;
+    text-align: center;
+ 
+}
+
+
+
+.lamp{
+    background: #c31432;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #240b36, #c31432);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #240b36, #c31432); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.temp{
+    background: #f12711;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #f5af19, #f12711);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #f5af19, #f12711); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.lamp2{
+    background: #7F7FD5;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.fan{
+    background: #bc4e9c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #f80759, #bc4e9c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.head-text{
+    text-align: left;
+    margin-left: 10px;
+}
+
+.card-head{
+    font-size: 20px;
+}
+.connect-btn {
+    margin-bottom: 5px;
+}

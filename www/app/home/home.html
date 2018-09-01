@@ -1,0 +1,81 @@
+<ion-view title="Home">
+  <ion-header-bar class="bar-positive">
+    <button class="button button-icon icon ion-navicon"></button>
+    <h1 class="title">Sussex home automation</h1>
+  </ion-header-bar>
+  <ion-content class="home-content">
+
+    <div class="wrap">
+      <h3 class="head-text"><i class="fas fa-home"></i> Your devices</h3>
+
+      <div class="row">
+        <div class="col device-view" ng-class="{lamp:$index%2==0, fan:$index%2!=0}" ng-repeat="connection in connections track by $index" >
+            <p class="card-head">
+              {{connection.name}}
+              </p>
+          <p class="connect_status">
+              {{connect_status}}
+          </p>
+          <div class="device-text">
+              {{state_of_lamp}}
+          </div>          
+            <button class="connect-btn col button button-light button-outline" ng-click="toggleConnection(connection.id)"> Connect</button>
+            <button class="switch-btn col button button-light button-outline" ng-click="toggleDevice(connection.id)"> Turn {{reverse_state}}</button>             
+      </div>
+      </div>
+
+      <div class="row">
+        <div class="col  device-view temp">
+            <p class="card-head">
+              Temperature Sensor
+            </p>
+            <p class="connect-status">
+                Connected
+              </p>
+              <div class="device-text">
+                ON 
+                
+              </div>
+              <p>
+                Temperature: 23.30 °C
+              </p>
+              <button class="button button-light button-outline"> Turn OFF</button>
+
+
+        </div>
+        
+
+
+      </div>
+      <div class="list">
+
+        <a class="item item-icon-left">
+          <i class="icon fas fa-plus-circle" style="font-size: 26px;"></i>
+          Add Device
+          <ion-icon name="log-out"></ion-icon>
+          
+        </a>
+          <a class="item item-icon-left">
+            <i class="icon ion-email"></i>
+            Messages
+            <span class="badge badge-calm">0</span>
+          </a>
+        
+          <a class="item item-icon-left item-icon-right" ng-click="goToSettings()">
+            <i class="icon fas fa-sliders-h" style="font-size: 26px;"></i>
+            Settings
+            <ion-icon name="log-out"></ion-icon>
+          </a>
+        
+          <a class="item item-icon-left" >
+            <i class="icon ion-mic-a"></i>
+            Sign Out
+            <ion-icon name="log-out"></ion-icon>
+          </a>
+        
+        
+        </div>
+    </div>
+
+  </ion-content>
+</ion-view>

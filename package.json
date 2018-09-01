@@ -10,6 +10,14 @@
     "gulp-sass": "^3.1.0"
   },
   "dependencies": {
-    "@ionic/pro": "2.0.3"
-  }
+    "@ionic/pro": "2.0.3",
+    "mqtt": "^2.18.3",
+    "web3": "github:ethereum/web3.js"
+  },
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
 }
