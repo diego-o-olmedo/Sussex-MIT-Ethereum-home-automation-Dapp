@@ -69,4 +69,5 @@ background: linear-gradient(to top, #f80759, #bc4e9c); /* W3C, IE 10+/ Edge, Fir
 }
 .connect-btn {
     margin-bottom: 5px;
+    margin-right: 5px;    
 }
