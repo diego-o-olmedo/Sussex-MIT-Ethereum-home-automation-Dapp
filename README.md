@@ -16,5 +16,6 @@ To run this project follow the steps below:
 
 # Helpful tips
 
-locate www/app/home/connections.js - This file includes two connections for testing purposes. Change the credentials to your own MQTT details and run.
-This app works best with Sonoff Basic devices using Tasmota firmware.
+- locate www/app/home/connections.js - This file includes two connections for testing purposes. Change the credentials to your own MQTT details and run.
+- This app works best with and was tested on Sonoff Basic devices using Tasmota firmware.
+- Source code of the application is under www/app.
