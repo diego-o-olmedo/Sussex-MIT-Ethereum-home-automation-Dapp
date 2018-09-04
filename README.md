@@ -1,6 +1,7 @@
 # A decentralised application for home automation using Ethereum blockchain
 
 This project requires some MQTT knowledge. To get started with MQTT visit www.mqtt.org.
+
 This is an ionic v1 project, to run it you will need to have ionic installed. Steps to install ionic can be found in the official  documentation here: https://ionicframework.com/getting-started#cli.
 
 
