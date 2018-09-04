@@ -2,7 +2,7 @@ angular.module('eth-sussex-iot')
 
   .service('connectionsService', function ($filter) {
 
-    // for demo purposes, I included these two test connections 
+    // for demo purposes, I included these two test connections  -- change as fits
     var connections = [{
         id: 1,
         name: 'Bedroom Lamp',

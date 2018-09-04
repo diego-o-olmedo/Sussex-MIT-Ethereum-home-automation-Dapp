@@ -4,11 +4,10 @@ angular.module('eth-sussex-iot')
   .controller("homeController", function ($scope, $stateParams, $q, $state, $rootScope, homeService, connectionsService, settingsService) {
 
 
-    console.log("hello from controller of home");
+    console.log(" == HOME CONTROLLER == ");
 
 
     $scope.connections = connectionsService.getConnections();
-
     $scope.reverse_state = "ON";
     $scope.reverse_state_y = "ON";
     $scope.state_of_lamp = homeService.getX();

@@ -8,24 +8,24 @@ angular.module('eth-sussex-iot')
 
 
     this.getX = function(){
-        console.log("this is x", x);
+        
         return x;
     }
 
     this.setX = function(_x){
     
     x = _x;
-    console.log("passed param", x);
+    
     }
 
     this.getY = function(){
-        console.log("this is y", y);
+        
         return y;
     }
 
     this.setY = function(_y){    
     y = _y;
-    console.log("passed param", y);
+
     }
 
     this.returnReverse = function(_c){

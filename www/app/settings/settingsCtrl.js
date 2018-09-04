@@ -2,7 +2,7 @@ angular.module('eth-sussex-iot')
 
 
   .controller("settingsController", function ($scope, $stateParams, $q, $state, $rootScope, settingsService, connectionsService) {
-    console.log("hello from controller of settings");
+    console.log("== SETTINGS CONTROLLER ==");
 
     $scope.connection = {
         name: '',
@@ -24,6 +24,7 @@ angular.module('eth-sussex-iot')
       $scope.addMqttConnection = function(){
           // add connection to the connectionsService array
         connectionsService.addConnection($scope.connection);
+        $state.go("home", { reload: true });
       }
 
 
