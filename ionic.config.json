@@ -1,15 +1,15 @@
 {
   "name": "sussex-eth-mqtt",
-  "type": "ionic1",
   "integrations": {
     "cordova": {},
     "gulp": {}
   },
+  "type": "ionic1",
   "watchPatterns": [
     "scss/**/*",
     "www/**/*",
     "!www/lib/**/*",
     "!www/**/*.map"
   ],
-  "app_id": "64f64c66"
+  "id": "64f64c66"
 }

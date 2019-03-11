@@ -14,80 +14,80 @@ angular.module('eth-sussex-iot')
     $scope.state_of_fan = homeService.getY();
     $scope.connect_text = "";
 
-    /* Connect to Web3js */
-    if (typeof web3 !== 'undefined') {
-      web3 = new Web3(web3.currentProvider);
-      console.log("web3 already exists somewhere")
-    } else {
-      console.log("using localhost ====")
-      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
-    }
+    // /* Connect to Web3js */
+    // if (typeof web3 !== 'undefined') {
+    //   web3 = new Web3(web3.currentProvider);
+    //   console.log("web3 already exists somewhere")
+    // } else {
+    //   console.log("using localhost ====")
+    //   web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    // }
     /* set web3 ethereum default account */
-    web3.eth.defaultAccount = web3.eth.accounts[0];
+    // web3.eth.defaultAccount = web3.eth.accounts[0];
     /* integrate the contract ABI */
-    var lampTestContract = web3.eth.contract(
-      [{
-          "constant": true,
-          "inputs": [],
-          "name": "getStatus_",
-          "outputs": [{
-              "name": "",
-              "type": "string"
-            },
-            {
-              "name": "",
-              "type": "string"
-            }
-          ],
-          "payable": false,
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "constant": false,
-          "inputs": [{
-              "name": "_state",
-              "type": "string"
-            },
-            {
-              "name": "_ts",
-              "type": "string"
-            }
-          ],
-          "name": "setStatus_",
-          "outputs": [],
-          "payable": false,
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "payable": false,
-          "stateMutability": "nonpayable",
-          "type": "constructor"
-        },
-        {
-          "anonymous": false,
-          "inputs": [{
-              "indexed": false,
-              "name": "lampState",
-              "type": "string"
-            },
-            {
-              "indexed": false,
-              "name": "ts",
-              "type": "string"
-            }
-          ],
-          "name": "Status_",
-          "type": "event"
-        }
-      ]
-    );
+    // var lampTestContract = web3.eth.contract(
+    //   [{
+    //       "constant": true,
+    //       "inputs": [],
+    //       "name": "getStatus_",
+    //       "outputs": [{
+    //           "name": "",
+    //           "type": "string"
+    //         },
+    //         {
+    //           "name": "",
+    //           "type": "string"
+    //         }
+    //       ],
+    //       "payable": false,
+    //       "stateMutability": "view",
+    //       "type": "function"
+    //     },
+    //     {
+    //       "constant": false,
+    //       "inputs": [{
+    //           "name": "_state",
+    //           "type": "string"
+    //         },
+    //         {
+    //           "name": "_ts",
+    //           "type": "string"
+    //         }
+    //       ],
+    //       "name": "setStatus_",
+    //       "outputs": [],
+    //       "payable": false,
+    //       "stateMutability": "nonpayable",
+    //       "type": "function"
+    //     },
+    //     {
+    //       "inputs": [],
+    //       "payable": false,
+    //       "stateMutability": "nonpayable",
+    //       "type": "constructor"
+    //     },
+    //     {
+    //       "anonymous": false,
+    //       "inputs": [{
+    //           "indexed": false,
+    //           "name": "lampState",
+    //           "type": "string"
+    //         },
+    //         {
+    //           "indexed": false,
+    //           "name": "ts",
+    //           "type": "string"
+    //         }
+    //       ],
+    //       "name": "Status_",
+    //       "type": "event"
+    //     }
+    //   ]
+    // );
     /* get contract by address */
-    var _appContract = lampTestContract.at('0x26ef2c455c5e8d1c4480de0d6fb8daf6bb661589');
+    // var _appContract = lampTestContract.at('0x26ef2c455c5e8d1c4480de0d6fb8daf6bb661589');
 
-    console.log(_appContract);
+    // console.log(_appContract);
 
     var isConnected = settingsService.isConnected();
     $scope.connect_status = isConnected;
