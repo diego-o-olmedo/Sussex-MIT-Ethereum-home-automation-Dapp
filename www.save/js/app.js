@@ -3,10 +3,10 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('BSconvert', ['ionic'])
+angular.module('eth-sussex-iot', ['ionic'])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+  $ionicPlatform.ready(function($rootScope) {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs).
     // The reason we default this to hidden is that native apps don't usually show an accessory bar, at
@@ -17,6 +17,8 @@ angular.module('BSconvert', ['ionic'])
       window.Keyboard.hideKeyboardAccessoryBar(true);
     }
 
+   
+
     if (window.StatusBar) {
       // Set the statusbar to use the default style, tweak this to
       // remove the status bar on iOS or change it to use white instead of dark colors.
@@ -24,3 +26,26 @@ angular.module('BSconvert', ['ionic'])
     }
   });
 })
+
+.config(function ($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
+  $ionicConfigProvider.views.maxCache(0);
+  $stateProvider
+    .state('home', {
+      url: '/home',
+      templateUrl: "app/home/home.html",
+      controller: 'homeController'
+    })
+    .state('settings', {
+      url: '/settings',
+      templateUrl: "app/settings/settings.html",
+      controller: 'settingsController'
+    })
+    
+
+  $urlRouterProvider.otherwise('/home');
+
+
+
+});
+

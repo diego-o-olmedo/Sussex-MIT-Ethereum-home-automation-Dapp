@@ -1,1 +1,90 @@
-/* Empty. Add your own CSS if you like */
+.title {
+  color: #e33d60 !important;
+  text-align: center !important;
+  background-color: transparent !important;
+}
+.background-style{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fa8c32+0,a00ab4+100;Custom1 */ background: rgb(250,140,50); /* Old browsers */ background: -moz-linear-gradient(45deg, rgb(250,140,50) 0%, rgb(160,10,180) 100%); /* FF3.6-15 */ background: -webkit-linear-gradient(45deg, rgb(250,140,50) 0%,rgb(160,10,180) 100%); /* Chrome10-25,Safari5.1-6 */ background: linear-gradient(45deg, rgb(250,140,50) 0%,rgb(160,10,180) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12*/
+}
+.result-quantity{
+  color:white; font-size: 40px; text-align: center;
+}
+.input-quantity{
+  color:white; font-size: 30px;
+}
+.input-box{
+  background-color: transparent !important; color:white !important; font-size: 40px; text-align: right; border:none; border-bottom: 1px solid white !important;
+}
+.info-style{
+  color:white; font-size: 14px;
+}
+.ion-arrow-up-a{
+  content: url('../img/arrowUp.png') !important;
+  height: 24px !important;
+  width: 24px !important;
+}
+.ion-shuffle{
+  content: url('../img/switchIcon.png') !important;
+  height: 24px !important;
+  width: 24px !important;
+  /*background-color:transparent !important;*/
+}
+.button-transparent{
+  background-color:transparent !important;
+  border: none !important;
+  /*height: 24px !important;*/
+  /*width: 24px !important;*/
+}
+/*.button {*/
+  /*background-color: #fff;*/
+  /*color: #9f0f2b;*/
+  /*border: 0.5px solid #e33d60;*/
+  /*border-radius: 0px;*/
+  /*margin-top: 2px;*/
+  /*margin-left: 2px;*/
+  /*vertical-align: middle;*/
+/*}*/
+/*.button:hover {*/
+  /*background-color: #e33d60;*/
+  /*color: #fce3e8;*/
+/*}*/
+/*.center-position {*/
+  /*margin-top: 50%;*/
+  /*margin-left: 12%;*/
+/*}*/
+/*.position-result {*/
+  /*margin-top: 10%;*/
+  /*margin-left: 12%;*/
+  /*margin-bottom: 5%;*/
+/*}*/
+/*.equation {*/
+  /*font-size: 20px;*/
+  /*display: inline-block;*/
+  /*vertical-align: middle;*/
+  /*padding-right: 12px;*/
+  /*color: #474747;*/
+/*}*/
+/*.equal {*/
+  /*font-size: 20px;*/
+  /*color: #ae1130;*/
+/*}*/
+/*.result {*/
+  /*font-size: 20px;*/
+  /*color: #ae1130;*/
+  /*text-align: center;*/
+/*}*/
+/*.clean {*/
+  /*font-size: 14px;*/
+/*}*/
+/*.position-clean {*/
+  /*margin-left: 12%;*/
+  /*margin-bottom: 3%;*/
+/*}*/
+/*.position-clean a {*/
+  /*color: #700b1f;*/
+  /*text-decoration: none;*/
+/*}*/
+/*.position-clean a:hover {*/
+  /*color: #ae1130;*/
+  /*text-decoration: underline;*/
+/*}*/
