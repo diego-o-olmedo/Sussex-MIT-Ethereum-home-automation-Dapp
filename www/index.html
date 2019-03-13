@@ -1,66 +1,222 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link rel="manifest" href="manifest.json">
-
-    <!-- un-comment this code to enable service worker
-    <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('service-worker.js')
-          .then(() => console.log('service worker installed'))
-          .catch(err => console.log('Error', err));
-      }
-    </script>-->
-
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- Add bootStrap jquery -->
+
+
+    <!-- local로 변경 시키기 -->
+
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+            crossorigin="anonymous"></script>
+    <!-- Add bootStrap css -->
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
+    <script src="cordova.js"></script>
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
     -->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
-
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-
-    <!-- your app's js -->
     <script src="js/app.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="js/calcuCtrl.js"></script>
-  </head>
-  <body ng-app="BSconvert">
-   <ion-nav-view>
-    <ion-pane ng-controller="calculatorCtrl">
-      <!--<ion-header-bar class="bar-stable">-->
-        <!--<h1 class="title">{{ title }}</h1>-->
-      <!--</ion-header-bar>-->
-      <ion-content class="background-style">
-        <!--<ion-list>-->
-          <!--<ion-item>-->
-            <!--Switch Units-->
-          <!--</ion-item>-->
-        <!--</ion-list>-->
-        <br><br><br>
-        <!--<div class="row row-center result-quantity">{{outppunits}}</div><br><br>-->
-        <p class="result-quantity">{{output}} {{unito}}</p>
-        <div class="col col-60"><div class="icon "><i class="icon ion-arrow-up-a"></i></div></div>
-        <!--<div class="row row-wrap"><div class="col col-offset-25">Type value to convert</div> </div>-->
-        <p class="info-style">Type value to convert</p>
-        <!--<input type="number" step="any" pattern="[-+]?[0-9]*[.,]?[0-9]+">-->
-        <!--/^[0-9]+(?:\.[0-9]+)?$/;-->
-        <div id = "calcForm" class="row row-bottom input-quantity"><input class="input-box" type="number" min="0.01" max="9999" required step="any" pattern="[-+]?[0-9]*[.,]?[0-9]+" placeholder="0" ng-model="input" id="test" ng-change="converter(input)" />{{uniti}}</div>
-        <div class="row row-bottom"><div class="col col-offset-75"><button class="button-transparent" ng-click="toggleCustom()"><i class="icon ion-shuffle"></i> </button>
-          <div ng-class="{{state}}" >
-                      </div></div></div>
-        <div class="row row-bottom"><div class="col col-offset-75 info-style">Switch Units</div></div>
-      </ion-content>
-    </ion-pane>
-  </ion-nav-view>
-  </body>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/directives.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="css/ionic-color-picker.css">
+    <link rel="stylesheet" href="css/ionic-time-picker.css">
+
+    <!-- add button css -->
+    <link rel="stylesheet" href="css/bttn.css">
+
+    <!-- add palette css -->
+    <link rel="stylesheet" href="css/palette-color-picker.css">
+
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+
+    <script src="js/ionic-color-picker-tinycolor.js"></script>
+    <script src="js/ionic-timepicker.bundle.min.js"></script>
+    <script src="js/roundProgress.min.js"></script>
+    <script src="js/moment.min.js"></script>
+
+    <!-- add Paho.mqtt js -->
+    <script src="js/mqttws31.js"></script>
+
+    <!--Firebase Header-->
+    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+
+    <!-- additional -->
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/2.0.1/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-messaging.js"></script>
+
+    <!-- Compiled and minified CSS --> <!-- bulb test -->
+    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">-->
+    <!-- Compiled and minified JavaScript -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>-->
+
+    <script>
+        // #2.  Initialize Firebase
+        // Refer to #2 in the article
+        var config = {
+            apiKey: "AIzaSyBFpQiJlpLwe18-C6R47ggUFfQaRfIuMpk",
+            authDomain: "adept-crossing-189001.firebaseapp.com",
+            databaseURL: "https://adept-crossing-189001.firebaseio.com",
+            projectId: "adept-crossing-189001",
+            storageBucket: "",
+            messagingSenderId: "109397332272"
+        };
+        firebase.initializeApp(config);
+    </script>
+
+    <!--<ion-nav-view name=​"tab-timepicker" class=​"view-container tab-content-->
+                  <!--nav-view=​"active" nav-view-transition=​"ios" nav-view-direction=​"swap" nav-swipe>​-->
+    <!--</ion-nav-view>-->
+</head>
+<body ng-app="app" animation="slide-left-right-ios7">
+<div>
+
+    <!--guide(tutorial) Form-->
+    <div ng-controller="guideCtrl">
+        <script id="guideForm" type="text/ng-template">
+            <ion-modal-view class="index-modal">
+                <ion-slides slider="swiper" options="swiperOptions">
+                    <ion-slide-page>
+                        <ion-content class="page-background"
+                                     style="background-image : url('img/modal_background.jpg') !important;">
+                            <div class="bar bar-header">
+                                <h1 class="title" style="font-size : 30px; color : #ffffff" ;> How To Use </h1>
+                            </div>
+                            <div >
+
+                            </div>
+                            <div class = "bar bar-footer">
+                                <ion-checkbox class = "index-check-modal" ng-model = "checked" ng-click = "showCheck(checked)">
+                                </ion-checkbox>
+                                <label class = "index-label-modal"> Don't show this again </label>
+                            </div>
+                        </ion-content>
+                    </ion-slide-page>
+                    <ion-slide-page>
+                        <h1>TEST HEADER 2</h1>
+                    </ion-slide-page>
+                    <ion-slide-page>
+                        <h1>TEST HEADER 3</h1>
+                    </ion-slide-page>
+                    <ion-slide-page>
+                        <h1>TEST HEADER 4</h1>
+                    </ion-slide-page>
+                </ion-slides>
+
+
+            </ion-modal-view>
+        </script>
+    </div>
+
+    <!--<ion-side-menus enable-menu-with-back-views="false" data-componentid="side-menu21">-->
+    <ion-side-menus>
+        <ion-side-menu-content>
+            <ion-nav-bar class="bar-stable">
+                <ion-nav-back-button></ion-nav-back-button>
+                <ion-nav-buttons side="left">
+                    <button class="button button-icon button-clear ion-navicon" menu-toggle="left"
+                    ></button>
+                </ion-nav-buttons>
+            </ion-nav-bar>
+
+            <ion-nav-view></ion-nav-view>
+
+        </ion-side-menu-content>
+
+        <div ng-controller="side_test as sm">
+            <!-- Smart slide using side="left | right"  -->
+            <ion-side-menu side="left" Drag-content="false">
+                <ion-header-bar class="bar-stable">
+                    <div class="title"> Side Menu</div>
+                </ion-header-bar>
+                <ion-content>
+                    <side-menu-list></side-menu-list>
+                </ion-content>
+
+                <!-- side menu -->
+                <!--<ion-footer-bar class="bar-footer">-->
+                    <!--<button class="bttn-gradient bttn-md bttn-success" ng-click="modal.show()"> company info</button>-->
+                    <ion-item ng-click = "modal.show()" > INFO</ion-item>
+                    <script id="settingsForm" type="text/ng-template">
+                        <ion-modal-view title="Settings">
+                            <ion-content class="page-background"
+                                         style="background-image : url('img/background-city-theme.jpg') !important;">
+                                <!-- css modify => ionic.css 4282 -->
+                                <ion-header-bar ng-class="::ui.headerFooterClass">
+                                    <img class="image-button-convert" src="img/prev.png" ng-click="modal.hide()">
+                                    <a class="neon-blue-low main-title"> Company Info </a>
+                                </ion-header-bar>
+                                <div class="div-center">
+                                    <img class="main-image-convert " src="img/suD&C.png"/>
+                                </div>
+                                <!-- 0504-312-2484 fax number -->
+                                <div class="card">
+                                    <div class="item item-body"
+                                         style="padding : 11px;  border-color : rgba(0,0,0,0); margin : 0px">
+                                        <a class="neon-orange-low"> Contact Us </a>
+                                    </div>
+                                    <div class="item item-body"
+                                         style="padding : 11px;border-color : rgba(0,0,0,0); margin : 0px">
+                                        <img class="image-icon-convert" src="img/contact_image/call_image.png">
+                                        <a class="contact-font neon-white"> 070-4237-8725 </a>
+                                    </div>
+                                    <div class="item item-body"
+                                         style="padding : 11px;border-color : rgba(0,0,0,0); margin : 0px">
+                                        <img class="image-icon-convert" src="img/contact_image/site_image.png">
+                                        <a class="contact-font neon-white"> www.sudnc.com</a>
+                                    </div>
+                                    <div class="item item-body"
+                                         style="padding : 11px;border-color : rgba(0,0,0,0); margin : 0px">
+                                        <img class="image-icon-convert" src="img/contact_image/email_image.png">
+                                        <a class="contact-font neon-white"> sudnc@naver.com</a>
+                                    </div>
+                                    <div class="item item-body"
+                                         style="padding : 11px;border-color : rgba(0,0,0,0); margin : 0px">
+                                        <img class="image-icon-convert-big" src="img/contact_image/location_image.png">
+                                        <a class="contact-font neon-white"> 부산시 동래구 사직북로 48번길 </a> <br>
+                                        <a class="contact-font neon-white"> 34, 2F </a>
+                                    </div>
+                                </div>
+                                <ion-footer-bar ng-class="ui.headerFooterClass">
+                                    <a class="neon-orange"> Copyright 2019 SuD&C. All Rights Reserved</a>
+                                </ion-footer-bar>
+                            </ion-content>
+                        </ion-modal-view>
+                    </script>
+                <!--</ion-footer-bar>-->
+            </ion-side-menu>
+        </div>
+    </ion-side-menus>
+</div>
+<!-- add bootStrap js -->
+<script type="text/javascript" src="js/bootstrap.js">
+
+</script>
+
+</body>
 </html>

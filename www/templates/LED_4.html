@@ -1,0 +1,306 @@
+<ion-view class="page-background" title="Control Room 04" id="page8">
+    <div ng-controller="ColorCtrl as vm" ng-model="ledTest_4">
+
+        <ion-content overflow-scroll="true" padding="false" class="has-header">
+
+            <!-- title -->
+            <div class="blub-title">
+                {{vm.title}}
+            </div>
+            <!-- bulb -->
+            <div class="bulb-4">
+                <i class="fas fa-lightbulb"></i>
+            </div>
+
+            <!--current status -->
+            <div class="status-location neon-orange-light">
+                <p> Brightness : {{bright_percent}} %</p>
+                <p> Speed : {{speed_percent}} % </p>
+                <p> Effect : {{effect_name}} </p>
+            </div>
+
+            <!-- hard Coding --> <!-- 파라매타 줄일것! -->
+            <div ng-show="rgb_Slider">
+                <div class="circle-background">
+                    <div class="circle" ng-style="{opacity : opacity_check == '#da3f3a' ? 1 : 0.4}"
+                         style="background : #da3f3a" ng-click="led_Light(ledTest_4,'#da3f3a','.bulb-4 i')"> red
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#f3753a' ? 1 : 0.4}"
+                         style="background : #f3753a" ng-click="led_Light(ledTest_4,'#f3753a','.bulb-4 i')">
+                        orange
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#ffdf3e' ? 1 : 0.4}"
+                         style="background : #ffdf3e" ng-click="led_Light(ledTest_4,'#ffdf3e','.bulb-4 i')">
+                        yellow
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#007644' ? 1 : 0.4}"
+                         style="background : #007644" ng-click="led_Light(ledTest_4,'#007644','.bulb-4 i')">
+                        green
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#3871a6' ? 1 : 0.4}"
+                         style="background : #3871a6" ng-click="led_Light(ledTest_4,'#3871a6','.bulb-4 i')"> blue
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#2a365c' ? 1 : 0.4}"
+                         style="background : #2a365c" ng-click="led_Light(ledTest_4,'#2a365c','.bulb-4 i')"> navy
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#764e82' ? 1 : 0.4}"
+                         style="background : #764e82" ng-click="led_Light(ledTest_4,'#764e82','.bulb-4 i')">
+                        purple
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#a48252' ? 1 : 0.4}"
+                         style="background : #a48252" ng-click="led_Light(ledTest_4,'#a48252','.bulb-4 i')"> gold
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#ffe5b2' ? 1 : 0.4}"
+                         style="background : #ffe5b2" ng-click="led_Light(ledTest_4,'#ffe5b2','.bulb-4 i')">
+                        beige
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#f69fa8' ? 1 : 0.4}"
+                         style="background : #f69fa8" ng-click="led_Light(ledTest_4,'#f69fa8','.bulb-4 i')"> pink
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#9aafda' ? 1 : 0.4}"
+                         style="background : #9aafda" ng-click="led_Light(ledTest_4,'#9aafda','.bulb-4 i')">
+                        lavender
+                    </div>
+                    <div class="circle" ng-style="{opacity : opacity_check == '#ffffff' ? 1 : 0.4}"
+                         style="background : #ffffff; color : #000000!important;"
+                         ng-click="led_Light(ledTest_4,'#ffffff','.bulb-4 i')"> white
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col">
+                    <!--<div class="list card">-->
+                    <!--<div ng-show="rgb_Slider" class="wrapper">-->
+
+
+                    <!-- RGB Slider Start -->
+
+                    <!--<div class="item item-divider"> RGB Sliderssss</div>-->
+                    <!--<div class="item item-body">-->
+                    <!--<button id="chosenColor" class="button " color-picker-->
+                    <!--model-mode="rgb" color-box="{{vm.testColors}}" ng-change="set(ledTest_4)"-->
+                    <!--ng-model="vm.testColors"-->
+                    <!--modal-title="Choose a color">-->
+                    <!--Choose a color-->
+                    <!--</button>-->
+                    <!--</div>-->
+
+                    <!--RGB Slider End-->
+
+                    <!--</div>-->
+                    <!--</div>-->
+                </div>
+
+                <div ng-show="color_Picker">
+                    <div class="item item-divider"> Color Picker</div>
+                    <div class="item item-body">
+                        <button class="bttn-gradient bttn-md bttn-success" ng-click="modal.show()"> test modal
+                        </button>
+                        <script id="colorPalette" type="text/ng-template">
+                            <!--<palette-item ></palette-item>-->
+                            <!-- temp background (LED1)-->
+                            <ion-modal-view style="background-color : rgba(0,0,0,0);" title="Color Palette">
+                                <ion-content overflow-scroll="true" padding="true" class="has-header">
+                                    <div class="card">
+                                        <div class="item item-divider">Palette2</div>
+                                        <div class="item item-body">
+                                            <material-picker ng-model="color" hover-model="hoverColor"
+                                                             ng-click="palette_color(color.hex,ledTest_4)"
+                                                             size="15"></material-picker>
+                                            <div style="color : #ffffff" ng-show="hoverColor !== null">
+                                                Hex: {{hoverColor.hex}} Name: {{hoverColor.name}}
+                                                R: {{hoverColor.r}} G: {{hoverColor.g}} B: {{hoverColor.b}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </ion-content>
+                                <ion-footer-bar ng-class="::ui.headerFooterClass">
+                                    <button class="button button-stable" ng-click="modal.hide()"> cancel
+                                    </button>
+                            </ion-modal-view>
+                        </script>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col">
+                <div ng-show="onOff">
+                    <div class="item item-divider"> Color Test</div>
+                    <div class="item item-body">
+                        <ion-item>
+                            <div class="item item-toggle">
+                                <label class="toggle">
+                                    <input type="checkbox" ng-model="switch_check"
+                                           ng-change="switch_change(ledTest_4,switch_check)"/>
+                                    <div class="track">
+                                        <div class="handle"></div>
+                                    </div>
+                                </label>
+                            </div>
+                        </ion-item>
+                    </div>
+                </div>
+
+
+                <div ng-show="effects">
+
+                    <!-- base effect  form -->
+                    <!--<div class="item item-divider"> effect Test</div>-->
+                    <!--<div class="item item-body">-->
+                    <!--<ion-list>-->
+                    <!--<ion-item>-->
+                    <!--<select style="color : #ffffff; " ng-init="effect_value = 'effect_name[0]' "-->
+                    <!--ng-change="show_Effect(effect_value.value,ledTest_4)"-->
+                    <!--ng-model="effect_value"-->
+                    <!--ng-options="x.effectName for x in effect">-->
+                    <!--</select>-->
+                    <!--</ion-item>-->
+
+                    <!--</ion-list>-->
+                    <!--</div>-->
+
+
+                    <!-- Effect Payload lists
+                    Static /0
+                    blink /1
+                    Breath /2
+                    Wipe /7
+                    Rainbow /11
+                    Running /42
+                    Chase /43
+                    Christmas /47
+                    Halloween /52
+                    TriColor /54
+                    -->
+
+                    <!-- hard Coding ( ng-repeat 활용 ) -->
+                    <div class="circle-background">
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Basic'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/0')"
+                             style="background : url('../img/effect_image/background-Basic.jpg') 100%; background-size : 100% 100% ">
+                            Basic
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Blink'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/1')"
+                             style="background : url('../img/effect_image/blink.jpg') 100%; background-size : 100% 100% ">
+                            Blink
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Running'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/42')"
+                             style="background : url('../img/effect_image/background-Running.jpg') 100%; background-size : 100% 100% ">
+                            Running
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Christmas'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/47')"
+                             style="background : url('../img/effect_image/chrismas.jpg') 100%; background-size : 100% ">
+                            Christmas
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Halloween'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/52')"
+                             style="background : url('../img/effect_image/halloween.jpg') 100%; background-size : 100% 100% ">
+                            Halloween
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Rainbow'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/11')"
+                             style="background : url('../img/effect_image/rainbow.jpg') 100%; background-size : 100% 100% ">
+                            Rainbow
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Breath'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/2')"
+                             style="background : url('../img/effect_image/Breath.jpg') 100%; background-size : 100% 100% ">
+                            Breath
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Wipe'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/7')"
+                             style="background : url('../img/effect_image/wipe.jpg') 100%; background-size : 100% 100% ">
+                            Wipe
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'Chase'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/43')"
+                             style="background : url('../img/effect_image/rainbow_chase.jpg') 100%; background-size : 100% 100% ">
+                            Chase
+                        </div>
+                        <div class="circle-image" ng-style="{opacity : effect_name === 'TriColor'? 1 : 0.4 }"
+                             ng-click="led_effect(ledTest_4, '/54')"
+                             style="background : url('../img/effect_image/TriColor.jpg') 100%; background-size : 100% 100% ">
+                            TriColor
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!--</div>-->
+
+            <!-- Temperature -->
+            <div ng-show="temperature">
+                <div class="list card">
+                    <div class="item item-divider">Color Temperature</div>
+                    <div class="item item-body">
+                        <form class="list">
+                            <ion-item class="range range-positive">
+                                <input type="range" value="2700" min="0" max="10000" ng-model="rangeValue"
+                                       ng-change="drag(rangeValue,ledTest_4)">
+                                <div> {{rangeValue}} K</div>
+                            </ion-item>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="circle-background-options" ng-show="options">
+                <div class="effect-options">
+                    <!-- Brightness -->
+                    <div class="effect-label">Brightness</div>
+                    <div class="range range-positive">
+                        <input type="range" min="0" max="255" ng-model="bright_value"
+                               ng-change="brightdrag(ledTest_4,bright_value)">
+                        <div style="color : white; font-size : 11px; text-indent:0;"> {{bright_percent}} %</div>
+                    </div>
+                    <!-- Speed -->
+                    <div class="effect-label"> Speed</div>
+                    <div class="range range-balanced ">
+                        <!--<i style = "color : red !important;"class = "icon ion-ios-sunny-outline"> </i>-->
+                        <input type="range" min="0" max="255" ng-model="speed_value"
+                               ng-change="speed_check(ledTest_4,speed_value)"/>
+                        <div style="color : white; font-size : 11px; text-indent:0;"> {{speed_percent}} %</div>
+                    </div>
+                </div>
+            </div>
+
+        </ion-content>
+
+
+        <!-- hard coding (ng-repeat 필요 ) -->
+        <ion-tabs class=" tabs tabs-icon-top">
+            <a class="tab-item tab-item-active" style="color : red" ng-click="go_Main()">
+                <i class="icon ion-arrow-left-c">
+                </i>
+                Back
+            </a>
+            <a class="tab-item" ng-class="{'tab-item-active' : vm.title == 'Light'}" ng-click="show_Light()">
+                <i class="icon ion-android-bulb"></i>
+                Light
+            </a>
+            <a class="tab-item" ng-class="{'tab-item-active' : vm.title == 'Effect' }" ng-click="show_Effect()">
+                <i class="icon ion-wand"></i>
+                Effect
+            </a>
+            <a class="tab-item" ng-class="{'tab-item-active' : vm.title == 'Options' }" ng-click="show_Options()">
+                <i class="icon ion-wrench">
+                </i>
+                Options
+            </a>
+        </ion-tabs>
+
+
+    </div>
+
+</ion-view>

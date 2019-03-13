@@ -1,0 +1,53 @@
+<ion-view class="page-background" title="remote" id="page9">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <h1> Remote Control Page </h1>
+        <div ng-controller="remoteCtrl">
+        <ul class = "list">
+            <li class = "item item-toggle">
+                Toggle 1
+                <label class = "toggle">
+                    <input type = "checkbox" ng-model = "remote.switch1"
+                           ng-change="remote_Switch(remote.switch1)"/>
+                    <div class = "track">
+                        <div class = "handle"> </div>
+                    </div>
+                </label>
+            </li>
+
+            <li class = "item item-toggle">
+                Toggle 2
+                <label class = "toggle">
+                    <input type = "checkbox"  ng-model = "remote.switch2"
+                        ng-change = "remote_Switch(remote.switch2,'02')"/>
+                    <div class = "track">
+                        <div class = "handle"></div>
+                    </div>
+                </label>
+            </li>
+
+            <li class = "item item-toggle">
+                Toggle 3
+                <label class = "toggle">
+                    <input type = "checkbox" ng-model = "remote.switch3"
+                        ng-change="remote_Switch(remote.switch3,'03')"/>
+                    <div class = "track">
+                        <div class = "handle"></div>
+                    </div>
+                </label>
+            </li>
+
+            <li class = "item item-toggle">
+                Toggle 4
+                <label class = "toggle">
+                    <input type = "checkbox" ng-model = "remote.switch4"
+                        ng-change="remote_Switch(remote.switch4,'04')"/>
+                    <div class = "track">
+                        <div class = "handle"></div>
+                    </div>
+                </label>
+            </li>
+
+        </ul>
+        </div>
+    </ion-content>
+</ion-view>
