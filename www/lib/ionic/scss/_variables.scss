@@ -93,6 +93,9 @@ $button-bar-button-height:        32px !default;
 $button-bar-button-padding:       8px !default;
 $button-bar-button-icon-size:     20px !default;
 
+$button-default-border:           transparent !default;
+$button-default-active-border:    null !default;
+
 $button-light-bg:                 $light !default;
 $button-light-text:               #444 !default;
 $button-light-border:             #ddd !default;
@@ -309,7 +312,7 @@ $item-thumbnail-width:            80px !default;
 $item-thumbnail-height:           80px !default;
 $item-thumbnail-margin:           10px !default;
 
-$item-divider-bg:                 #5D5D5D !default;
+$item-divider-bg:                 #f5f5f5 !default;
 $item-divider-color:              #222 !default;
 $item-divider-padding:            5px 15px !default;
 
